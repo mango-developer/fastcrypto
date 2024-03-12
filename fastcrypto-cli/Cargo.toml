@@ -1,0 +1,35 @@
+[package]
+name = "fastcrypto-cli"
+version = "0.1.1"
+license = "Apache-2.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.1.8", features = ["derive"] }
+fastcrypto = { path = "../fastcrypto", features = ["copy_key"] }
+fastcrypto-vdf = { path = "../fastcrypto-vdf", features = ["experimental"] }
+hex = "0.4.3"
+bincode.workspace = true
+rand.workspace = true
+exitcode = "1.1.2"
+bcs.workspace = true
+
+[dev-dependencies]
+assert_cmd = "2.0.0"
+regex = "1.5.4"
+
+[[bin]]
+name = "ecvrf-cli"
+path = "src/ecvrf.rs"
+
+[[bin]]
+name = "encode-cli"
+path = "src/encode_cli.rs"
+
+[[bin]]
+name = "sigs-cli"
+path = "src/sigs_cli.rs"
+
+[[bin]]
+name = "vdf-cli"
+path = "src/vdf.rs"
